@@ -1,84 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Farmer</title>
+@extends('layouts.app')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-gray-100">
+@section('content')
 
-    <div class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow">
+<div class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded-xl shadow">
 
-        <div class="flex justify-between items-center mb-6">
+    <div class="flex justify-between items-center mb-6">
 
-            <h1 class="text-3xl font-bold text-green-700">
-                Add New Farmer
-            </h1>
+        <h1 class="text-3xl font-bold text-green-700">
+            Add New Farmer
+        </h1>
 
-            <a href="/farmers"
-               class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
-               Back
-            </a>
+        <a href="/farmers"
+           class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+           Back
+        </a>
+
+    </div>
+
+    @if($errors->any())
+
+        <div class="bg-red-100 text-red-700 p-4 rounded mb-4">
+
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
 
         </div>
-        @if($errors->any())
 
-    <div class="bg-red-100 text-red-700 p-4 rounded mb-4">
+    @endif
 
-        <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+    <form action="/farmers" method="POST">
 
-    </div>
+        @csrf
 
-@endif
+        <div class="mb-4">
 
-        <form action="/farmers" method="POST">
+            <label class="block mb-2 font-semibold">
+                Farmer Name
+            </label>
 
-            @csrf
+            <input type="text"
+                   name="name"
+                   class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Farmer Name</label>
+        </div>
 
-                <input type="text"
-                       name="name"
-                       class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
+        <div class="mb-4">
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Phone Number</label>
+            <label class="block mb-2 font-semibold">
+                Phone Number
+            </label>
 
-                <input type="text"
-                       name="phone"
-                       class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
+            <input type="text"
+                   name="phone"
+                   class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
 
-            <div class="mb-4">
-                <label class="block mb-2 font-semibold">Village</label>
+        </div>
 
-                <input type="text"
-                       name="village"
-                       class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
+        <div class="mb-4">
 
-            <div class="mb-6">
-                <label class="block mb-2 font-semibold">Land Size (Acres)</label>
+            <label class="block mb-2 font-semibold">
+                Village
+            </label>
 
-                <input type="text"
-                       name="land_size"
-                       class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
+            <input type="text"
+                   name="village"
+                   class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
 
-            <button type="submit"
-                    class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">
-                    Save Farmer
-            </button>
+        </div>
 
-        </form>
+        <div class="mb-6">
 
-    </div>
+            <label class="block mb-2 font-semibold">
+                Land Size (Acres)
+            </label>
 
-</body>
-</html>
+            <input type="text"
+                   name="land_size"
+                   class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-green-500">
+
+        </div>
+
+        <button type="submit"
+                class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">
+
+                Save Farmer
+
+        </button>
+
+    </form>
+
+</div>
+
+@endsection

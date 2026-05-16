@@ -3,9 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\RecommendationController;
+use App\Models\Farmer;
+use App\Models\Recommendation;
 
 Route::get('/', function () {
-    return "Smart Fertilizer Planner Project Started!";
+
+    $totalFarmers = Farmer::count();
+    $totalRecommendations = Recommendation::count();
+
+    return view('dashboard', compact(
+        'totalFarmers',
+        'totalRecommendations'
+    ));
 });
 
 Route::get('/farmers/create', [FarmerController::class, 'create']);
