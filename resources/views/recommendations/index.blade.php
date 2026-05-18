@@ -16,6 +16,13 @@
         </a>
 
     </div>
+    @if(session('success'))
+
+    <div class="bg-green-100 text-green-700 p-4 rounded mb-4">
+        {{ session('success') }}
+    </div>
+
+@endif
 
     <table class="w-full border-collapse">
 
@@ -30,6 +37,7 @@
                 <th class="p-3 text-left">Phosphorus</th>
                 <th class="p-3 text-left">Potassium</th>
                 <th class="p-3 text-left">Recommended Fertilizer</th>
+                <th class="p-3 text-left">Action</th>
 
             </tr>
 
@@ -68,6 +76,24 @@
                 <td class="p-3 font-bold text-green-700">
                     {{ $recommendation->recommended_fertilizer }}
                 </td>
+                <td class="p-3">
+
+    <form action="/recommendations/{{ $recommendation->id }}"
+          method="POST">
+
+        @csrf
+        @method('DELETE')
+
+        <button type="submit"
+                class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+
+                Delete
+
+        </button>
+
+    </form>
+
+</td>
 
             </tr>
 

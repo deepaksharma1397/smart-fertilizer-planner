@@ -6,9 +6,26 @@
 
     <div class="flex justify-between items-center mb-6">
 
-        <h1 class="text-3xl font-bold text-green-700">
-            Farmers List
-        </h1>
+    <h1 class="text-3xl font-bold text-green-700">
+        Farmers List
+    </h1>
+
+    <div class="flex gap-3">
+
+        <form action="/farmers" method="GET">
+
+            <input type="text"
+                   name="search"
+                   value="{{ $search }}"
+                   placeholder="Search farmer..."
+                   class="border border-gray-300 rounded px-4 py-2">
+
+            <button type="submit"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    Search
+            </button>
+
+        </form>
 
         <a href="/farmers/create"
            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
@@ -16,6 +33,8 @@
         </a>
 
     </div>
+
+</div>
 
     @if(session('success'))
 

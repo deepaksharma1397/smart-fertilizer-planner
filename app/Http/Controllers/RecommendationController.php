@@ -23,20 +23,28 @@ class RecommendationController extends Controller
             'potassium' => 'required|integer',
         ]);
 
-        $fertilizer = '';
+      $fertilizer = '';
 
-        if ($request->nitrogen < 50) {
-            $fertilizer = 'Urea';
-        }
-        elseif ($request->phosphorus < 50) {
-            $fertilizer = 'DAP';
-        }
-        elseif ($request->potassium < 50) {
-            $fertilizer = 'Potash';
-        }
-        else {
-            $fertilizer = 'NPK Balanced Fertilizer';
-        }
+if ($request->nitrogen < 50) {
+
+    $fertilizer = 'Nitrogen Deficient → Urea Recommended';
+
+}
+elseif ($request->phosphorus < 50) {
+
+    $fertilizer = 'Phosphorus Deficient → DAP Recommended';
+
+}
+elseif ($request->potassium < 50) {
+
+    $fertilizer = 'Potassium Deficient → MOP Recommended';
+
+}
+else {
+
+    $fertilizer = 'Soil Balanced → NPK Fertilizer Recommended';
+
+}
 
         Recommendation::create([
             'farmer_name' => $request->farmer_name,
@@ -57,5 +65,12 @@ class RecommendationController extends Controller
         $recommendations = Recommendation::all();
 
         return view('recommendations.index', compact('recommendations'));
+    }
+    public function destroy($id)
+    {
+        Recommendation::findOrFail($id)->delete();
+
+        return redirect('/recommendations')
+                ->with('success', 'Recommendation Deleted Successfully!');
     }
 }

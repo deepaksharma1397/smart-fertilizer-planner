@@ -32,3 +32,4 @@ Route::get('/recommendations/create', [RecommendationController::class, 'create'
 Route::post('/recommendations', [RecommendationController::class, 'store']);
 
 Route::get('/recommendations', [RecommendationController::class, 'index']);
+Route::delete('/recommendations/{id}', [RecommendationController::class, 'destroy']);

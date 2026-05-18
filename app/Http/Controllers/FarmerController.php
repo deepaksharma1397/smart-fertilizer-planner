@@ -10,12 +10,19 @@ class FarmerController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function index()
-    {
-        $farmers = Farmer::all();
+   public function index(Request $request)
+{
+    $search = $request->search;
 
-        return view('farmers.index', compact('farmers'));
-    }
+    $farmers = Farmer::when($search, function ($query, $search) {
+
+        $query->where('name', 'like', "%{$search}%")
+              ->orWhere('village', 'like', "%{$search}%");
+
+    })->get();
+
+    return view('farmers.index', compact('farmers', 'search'));
+}
 
     /**
      * Show the form for creating a new resource.
