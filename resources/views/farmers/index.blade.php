@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="max-w-6xl mx-auto mt-10 bg-white p-8 rounded-xl shadow">
+<div class="max-w-6xl mx-auto mt-10 bg-white/15 backdrop-blur-xl border border-white/20 text-white p-8 rounded-xl shadow">
 
     <div class="flex justify-between items-center mb-6">
 

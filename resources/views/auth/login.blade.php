@@ -1,4 +1,19 @@
 <x-guest-layout>
+    <div class="text-center mb-8">
+
+    <h1 class="text-5xl font-extrabold text-green-700 drop-shadow">
+
+        Smart Fertilizer Planner
+
+    </h1>
+
+    <p class="text-gray-700 mt-3 text-lg font-medium">
+
+        Smart Agriculture Recommendation System
+
+    </p>
+
+</div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -28,20 +43,42 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-black font-semibold">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
+            <div class="flex justify-between items-center w-full">
 
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+    <div class="flex gap-4">
+
+        @if (Route::has('password.request'))
+
+            <a class="underline text-sm text-black font-semibold hover:text-green-700"
+               href="{{ route('password.request') }}">
+
+                Forgot Password?
+
+            </a>
+
+        @endif
+
+        <a class="underline text-sm text-black font-semibold hover:text-green-700"
+           href="{{ route('register') }}">
+
+            Register
+
+        </a>
+
+    </div>
+
+    <x-primary-button class="bg-green-600 hover:bg-green-700">
+
+        {{ __('Log in') }}
+
+    </x-primary-button>
+
+</div>
         </div>
     </form>
 </x-guest-layout>
