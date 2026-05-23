@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="max-w-6xl mx-auto mt-10 bg-white/15 backdrop-blur-xl border border-white/20 text-white p-8 rounded-xl shadow">
+<div class="max-w-6xl mx-auto mt-10 bg-black/30 backdrop-blur-xl border border-white/20 text-white/15 backdrop-blur-xl border border-white/20 text-white p-8 rounded-xl shadow">
 
     <div class="flex justify-between items-center mb-6">
 
@@ -28,7 +28,7 @@
         </form>
 
         <a href="/farmers/create"
-           class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+           class="bg-green-700/80 text-white px-4 py-2 rounded hover:bg-green-700">
            Add Farmer
         </a>
 
@@ -48,7 +48,7 @@
 
         <thead>
 
-            <tr class="bg-green-600 text-white">
+            <tr class="bg-green-700/80 text-white">
 
                 <th class="p-3 text-left">Name</th>
                 <th class="p-3 text-left">Phone</th>
@@ -64,7 +64,7 @@
 
             @foreach($farmers as $farmer)
 
-            <tr class="border-b hover:bg-gray-100">
+            <tr class="border-b hover:bg-white/10 transition duration-300">
 
                 <td class="p-3">{{ $farmer->name }}</td>
                 <td class="p-3">{{ $farmer->phone }}</td>

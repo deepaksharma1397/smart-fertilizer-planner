@@ -15,7 +15,7 @@
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
     url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2070');">
 
-    <nav class="bg-black/30 backdrop-blur-lg text-white p-4 shadow-xl border-b border-white/20">
+   <nav class="bg-black/40 backdrop-blur-xl text-white p-4 shadow-2xl border-b border-green-400/20">
 
         <div class="max-w-7xl mx-auto flex justify-between items-center">
 
@@ -26,17 +26,17 @@
             <div class="flex gap-4 items-center">
 
                 <a href="/"
-                   class="hover:text-gray-200">
+                   class="hover:text-green-300 transition duration-300">
                    Dashboard
                 </a>
 
                 <a href="/farmers"
-                   class="hover:text-gray-200">
+                   class="hover:text-green-300 transition duration-300">
                    Farmers
                 </a>
 
                 <a href="/recommendations"
-                   class="hover:text-gray-200">
+                   class="hover:text-green-300 transition duration-300">
                    Recommendations
                 </a>
 
@@ -45,7 +45,7 @@
                     @csrf
 
                     <button type="submit"
-                            class="bg-red-500 px-3 py-1 rounded hover:bg-red-600">
+                            class="bg-red-600 hover:bg-red-700 transition duration-300 px-3 py-1 rounded hover:bg-red-600">
 
                         Logout
 

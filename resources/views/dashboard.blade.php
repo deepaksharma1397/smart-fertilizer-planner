@@ -10,7 +10,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
-        <div class="bg-white/20 backdrop-blur-xl border border-white/20 text-white p-6 rounded-xl shadow">
+        <div class="bg-white/15 backdrop-blur-xl border border-white/20 shadow-2xl backdrop-blur-xl border border-white/20 text-green-200 p-6 rounded-xl shadow">
 
             <h2 class="text-xl font-bold text-green-700 mb-3">
                 Total Farmers
@@ -22,7 +22,7 @@
 
         </div>
 
-        <div class="bg-white/20 backdrop-blur-xl border border-white/20 text-white p-6 rounded-xl shadow">
+        <div class="bg-white/15 backdrop-blur-xl border border-white/20 shadow-2xl backdrop-blur-xl border border-white/20 text-blue-200 p-6 rounded-xl shadow">
 
             <h2 class="text-xl font-bold text-blue-700 mb-3">
                 Total Recommendations
@@ -38,7 +38,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
-        <div class="bg-white/20 backdrop-blur-xl border border-white/20 text-white p-6 rounded-xl shadow">
+        <div class="bg-white/15 backdrop-blur-xl border border-white/20 shadow-2xl backdrop-blur-xl border border-white/20 text-gray-100 p-6 rounded-xl shadow">
 
             <h2 class="text-xl font-bold text-green-700 mb-3">
                 Latest Farmer Added
@@ -64,7 +64,7 @@
 
         </div>
 
-        <div class="bg-white/20 backdrop-blur-xl border border-white/20 text-white p-6 rounded-xl shadow">
+        <div class="bg-white/15 backdrop-blur-xl border border-white/20 shadow-2xl backdrop-blur-xl border border-white/20 text-gray-100 p-6 rounded-xl shadow">
 
             <h2 class="text-xl font-bold text-blue-700 mb-3">
                 Latest Recommendation
@@ -92,7 +92,7 @@
 
     </div>
 
-    <div class="bg-white/20 backdrop-blur-xl border border-white/20 text-white p-10 rounded-xl shadow">
+    <div class="bg-white/15 backdrop-blur-xl border border-white/20 shadow-2xls backdrop-blur-xl border border-white/20 text-gray-100 p-10 rounded-xl shadow">
 
         <h2 class="text-2xl font-bold mb-6 text-gray-700">
             Quick Navigation
@@ -101,21 +101,21 @@
         <div class="flex flex-wrap gap-4">
 
             <a href="/farmers"
-               class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">
+               class="bg-green-600 text-gray-100 px-6 py-3 rounded hover:bg-green-700">
 
                Manage Farmers
 
             </a>
 
             <a href="/recommendations"
-               class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
+               class="bg-blue-600 text-gray-100 px-6 py-3 rounded hover:bg-blue-700">
 
                View Recommendations
 
             </a>
 
             <a href="/recommendations/create"
-               class="bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700">
+               class="bg-purple-600 text-gray-100 px-6 py-3 rounded hover:bg-purple-700">
 
                New Recommendation
 
